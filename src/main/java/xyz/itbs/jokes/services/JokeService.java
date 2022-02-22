@@ -10,5 +10,6 @@ public interface JokeService {
     Set<Joke> getAllJokes();
     void deleteJokeById(Long id);
     JokeCommand saveJokeCommand(JokeCommand jokeCommand);
+    Joke saveJoke(Joke joke);
 
 }

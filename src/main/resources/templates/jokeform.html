@@ -59,7 +59,7 @@
                 <select class="form-control" th:field="*{category}">
                     <option th:each="catValue : ${T(xyz.itbs.jokes.domain.Category).values()}"
                             th:value="${(catValue.name())}"
-                            th:text="${catValue.name()}">val</option>
+                            th:text="${catValue}">val</option>
                 </select>
                 <select class="form-control" th:remove="all">
                     <option>Dad</option>

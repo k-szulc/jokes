@@ -23,12 +23,13 @@
                 <th>Title</th>
                 <th>Text</th>
                 <th>Category</th>
+                <th></th>
             </tr>
             <tr th:each="joke : ${jokes}">
                 <td th:text="${joke.title}"></td>
                 <td th:text="${joke.text}"></td>
                 <td th:text="${joke.category}"></td>
-                <td><a th:onclick="return confirm('Sure ?')" th:href="${'/delete/' + joke.id}">Delete</a> </td>
+                <td><a th:onclick="return confirm('Not funny ? You sure you want to delete it ?')" th:href="${'/delete/' + joke.id}">Delete</a> </td>
             </tr>
         </table>
     </div>
@@ -39,7 +40,7 @@
     </div>
     <div class="row">
         <div class="col-sm-3">
-            <a href="/new">Get JokeOfTheDay</a>
+            <a href="#" th:href="${'/getjoke'}">Get JokeOfTheDay</a>
         </div>
     </div>
 </div>

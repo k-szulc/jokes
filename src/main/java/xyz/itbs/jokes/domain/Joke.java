@@ -18,8 +18,8 @@ public class Joke {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String title;
+    @Lob
     private String text;
 
     @Enumerated(value = EnumType.STRING)

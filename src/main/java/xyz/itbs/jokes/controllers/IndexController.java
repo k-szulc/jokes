@@ -11,8 +11,8 @@ import xyz.itbs.jokes.services.JokeService;
 
 import javax.validation.Valid;
 
-@Slf4j
 @Controller
+@Slf4j
 public class IndexController {
 
     JokeService jokeService;

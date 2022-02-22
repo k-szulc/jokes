@@ -31,17 +31,27 @@ public class JokeServiceImpl implements JokeService {
     public Set<Joke> getAllJokes() {
         Set<Joke> jokeSet = new HashSet<>();
         jokeRepository.findAll().iterator().forEachRemaining(jokeSet::add);
+        log.info("Fetched " + jokeSet.size() + " jokes from DB");
         return jokeSet;
     }
 
     @Override
     public void deleteJokeById(Long id) {
         jokeRepository.deleteById(id);
+        log.info("Removed joke ID :: " + id);
     }
 
     @Override
     public JokeCommand saveJokeCommand(JokeCommand jokeCommand) {
         Joke savedJoke = jokeRepository.save(jokeCommandToJoke.convert(jokeCommand));
+        log.info("Joke ID :: " + savedJoke.getId() + " :: saved successfully");
         return jokeToJokeCommand.convert(savedJoke);
+    }
+
+    @Override
+    public Joke saveJoke(Joke joke) {
+        Joke savedJoke = jokeRepository.save(joke);
+        log.info("Joke ID :: " + savedJoke.getId() + " :: saved successfully");
+        return savedJoke;
     }
 }
